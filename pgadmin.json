@@ -1,0 +1,24 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Montpellier",
+      "Group": "Servers",
+      "Host": "pg_montpellier",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "admin",
+      "SSLMode": "prefer",
+      "Comment": "Production master database"
+    },
+    "2": {
+      "Name": "Toulouse",
+      "Group": "Servers",
+      "Host": "pg_toulouse",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "admin",
+      "SSLMode": "prefer",
+      "Comment": "Production master database"
+    }
+  }
+}
