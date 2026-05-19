@@ -1,0 +1,5 @@
+ utilisateurs      |     5
+ formations        |     4
+ progressions      |     6
+ resultats_examens |     3
+

@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  pg_montpellier:
+    image: postgres:15
+    container_name: pg_montpellier
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: techcorp_db
+    ports:
+      - '5432:5432'
+    command: postgres -c wal_level=logical
+    volumes:
+      - pg_montpellier_data:/var/lib/postgresql/data
+    networks:
+      - migration_net
+
+  pg_toulouse:
+    image: postgres:15
+    container_name: pg_toulouse
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_DB: techcorp_db
+    ports:
+      - '5433:5432'
+    command: postgres -c wal_level=logical
+    volumes:
+      - pg_toulouse_data:/var/lib/postgresql/data
+    networks:
+      - migration_net
+
+volumes:
+  pg_montpellier_data:
+  pg_toulouse_data:
+
+networks:
+  migration_net:
+    driver: bridge
